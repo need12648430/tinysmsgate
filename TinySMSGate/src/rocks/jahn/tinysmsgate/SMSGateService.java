@@ -75,7 +75,8 @@ public class SMSGateService extends Service {
 	}
 	
 	public void stopServer() {
-		webServer.stop();
+		if(webServer.isAlive())
+			webServer.stop();
 		webServer = null;
 	    Toast.makeText(this, "Tiny SMS Gate Web Service stopped.", Toast.LENGTH_SHORT).show();
 	}
