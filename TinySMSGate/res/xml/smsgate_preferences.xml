@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    
+<PreferenceCategory android:title="SMS Delivery">
+    <CheckBoxPreference
+        android:title="Forward SMS"
+        android:defaultValue="false"
+        android:summary="If checked, messages will be sent to a remote HTTP server."
+        android:key="chkForwardSMS" />
+    
+    <PreferenceScreen
+        android:title="Out HTTP Settings"
+        android:summary="Configure how and where the messages are sent."
+        android:key="prefHTTPOut">
+        
+        <EditTextPreference
+            android:title="URL"
+            android:defaultValue="http://example.com/received"
+            android:summary="Regardless of method, this is the URL the data will be delivered to."
+            android:key="txtUrl" />
+        
+        <ListPreference
+			android:entries="@array/method"
+			android:entryValues="@array/method_values"
+            android:defaultValue="POST"
+            android:title="Method"
+            android:summary="Whether to send over POST or GET."
+            android:key="lstSendMethod" />
+    </PreferenceScreen>
+</PreferenceCategory>
+
+<PreferenceCategory android:title="SMS Reception">
+    <CheckBoxPreference
+        android:title="Receive SMS"
+        android:defaultValue="false"
+        android:summary="If checked, Tiny SMS Gate's internal HTTP server will listen for messages to send over SMS."
+        android:key="chkReceiveSMS" />
+    
+    <PreferenceScreen
+        android:title="In HTTP Settings"
+        android:summary="Set up the internal server."
+        android:key="prefHTTPIn">
+        
+        <EditTextPreference
+            android:inputType="number"
+            android:title="Port"
+            android:defaultValue="8080"
+            android:summary="The port to listen on for HTTP requests."
+            android:key="txtPort" />
+        
+        <EditTextPreference
+            android:title="Page"
+            android:defaultValue="/send"
+            android:summary="The page you'll be sending SMS messages to, a relative URI. (e.g. '/send')"
+            android:key="txtPage" />
+        
+        <ListPreference
+			android:entries="@array/method"
+			android:entryValues="@array/method_values"
+            android:defaultValue="POST"
+            android:title="Method"
+            android:summary="Whether you'll be sending over POST or GET."
+            android:key="lstReceiveMethod" />
+        
+	    <CheckBoxPreference
+	        android:title="Use Password"
+	        android:defaultValue="false"
+	        android:summary="If checked, a password will be required to be sent along with the SMS data."
+	        android:key="chkUsePassword" />
+        
+        <EditTextPreference
+            android:inputType="textPassword"
+            android:title="Password"
+            android:summary="This is the password required to send SMS."
+            android:key="txtPassword" />
+    </PreferenceScreen>
+</PreferenceCategory>
+</PreferenceScreen>

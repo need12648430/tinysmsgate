@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".TinySMSGate" >
+    
+    <TextView
+	    android:id="@+id/txtStatus"
+	    android:text="..."
+	    android:textColor="#000000"
+	    android:textStyle="bold"
+	    android:textSize="24sp"
+	    android:gravity="center"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content"
+		android:height="48sp" />
+   	
+    <TextView
+	    android:id="@+id/txtIP"
+	    android:text=""
+	    android:gravity="center"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" />
+   	
+    <TextView
+	    android:id="@+id/txtPort"
+	    android:text=""
+	    android:gravity="center"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" />
+    
+    <TextView
+	    android:id="@+id/txtPage"
+	    android:text=""
+	    android:gravity="center"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" />
+    
+    <View
+        android:layout_height="24sp"
+        android:layout_width="fill_parent" />
+   
+    <Button
+	    android:id="@+id/btnServerToggle"
+	    android:text="..."
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" />
+
+    <Button
+	    android:id="@+id/btnPreferences"
+	    android:text="Preferences"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" />
+    
+    <Button
+	    android:id="@+id/btnHelp"
+	    android:text="Code Examples"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" />
+
+</LinearLayout>

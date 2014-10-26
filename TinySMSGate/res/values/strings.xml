@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tiny SMS Gate</string>
+    <string name="action_settings">Settings</string>
+    
+	<string-array name="method">
+		<item>"POST"</item>
+		<item>"GET"</item>
+	</string-array>
+	
+	<string-array name="method_values">
+		<item>"POST"</item>
+		<item>"GET"</item>
+	</string-array>
+
+</resources>
