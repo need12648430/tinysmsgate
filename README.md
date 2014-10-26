@@ -1,6 +1,4 @@
-<div style="text-align:center">
-  ![Ironically large logo.](http://i.imgur.com/1mVX0Qg.png?1)
-</div>
+![Ironically large logo.](http://i.imgur.com/1mVX0Qg.png?1)
 
 # Tiny SMS Gate
 Tiny SMS Gate is a tiny (GPL 2 License) SMS gateway for Android. It allows you to send and receive SMS messages through your phone, over regular ol' HTTP. Nothing more.
