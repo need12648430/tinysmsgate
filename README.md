@@ -3,7 +3,7 @@
 # Tiny SMS Gate
 Tiny SMS Gate is a tiny (GPL 2 License) SMS gateway for Android. It allows you to send and receive SMS messages through your phone, over regular ol' HTTP. Nothing more.
 
-As such, I have to ask that you please, please don't use this outside of a trusted LAN. If not for your sake, for mine.
+As such, I have to ask that you please, please don't use this outside of a trusted LAN. While there is an option to protect against unauthorized outgoing SMS messages, it is *not secure.* It's still vulnerable to MITM attacks.
 
 Full disclosure: This project is running [NanoHTTPD](https://github.com/NanoHttpd/nanohttpd) in the background. It's pretty great, I'd highly recommend it.
 
