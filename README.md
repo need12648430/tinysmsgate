@@ -14,11 +14,13 @@ Full disclosure: This project is running [NanoHTTPD](https://github.com/NanoHttp
 There are some code samples [here](https://gist.github.com/need12648430/205c8288693ead748fed). They're written in PHP.
 
 Here's the skinny though:
+
 1. Open Tiny SMS Gate
 2. Set up your Preferences
 3. Start the internal server
 
 Then, from another server, e.g. Apache or something written in node.js
+
 1. Set up a page to receive SMS data
 2. Write some functions to send SMS data to Tiny SMS Gate
 3. Use them
