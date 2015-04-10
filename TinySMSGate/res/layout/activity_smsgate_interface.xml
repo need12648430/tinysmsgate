@@ -10,7 +10,7 @@
     tools:context=".TinySMSGate" >
     
     <TextView
-	    android:id="@+id/txtStatus"
+	    android:id="@+id/txtReceiving"
 	    android:text="..."
 	    android:textColor="#000000"
 	    android:textStyle="bold"
@@ -19,6 +19,15 @@
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content"
 		android:height="48sp" />
+   	
+    <TextView
+	    android:id="@+id/txtForwarding"
+	    android:text=""
+	    android:textStyle="bold"
+	    android:textSize="24sp"
+	    android:gravity="center"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" />
    	
     <TextView
 	    android:id="@+id/txtIP"
@@ -46,7 +55,13 @@
         android:layout_width="fill_parent" />
    
     <Button
-	    android:id="@+id/btnServerToggle"
+	    android:id="@+id/btnReceiverToggle"
+	    android:text="..."
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" />
+   
+    <Button
+	    android:id="@+id/btnForwarderToggle"
 	    android:text="..."
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content" />

@@ -43,8 +43,8 @@ public class TinySMSGate extends Activity {
 		
 		setContentView(R.layout.activity_smsgate_interface);
 		
-		Button btnServerToggle = (Button) findViewById(R.id.btnServerToggle);
-		btnServerToggle.setOnClickListener(new View.OnClickListener() {
+		Button btnReceiverToggle = (Button) findViewById(R.id.btnReceiverToggle);
+		btnReceiverToggle.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -56,6 +56,19 @@ public class TinySMSGate extends Activity {
 					}
 					updateStatuses();
 				}
+			}
+			
+		});
+		
+		Button btnForwarderToggle = (Button) findViewById(R.id.btnForwarderToggle);
+		
+		btnForwarderToggle.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+					boolean setting = preferences.getBoolean("chkForwardSMS", false);
+					preferences.edit().putBoolean("chkForwardSMS", !setting).apply();
+					updateStatuses();
 			}
 			
 		});
@@ -106,25 +119,37 @@ public class TinySMSGate extends Activity {
 		TextView txtIP = (TextView) findViewById(R.id.txtIP);
 		txtIP.setText("IP: " + ip);
 		
-		Button btnServerToggle = (Button) findViewById(R.id.btnServerToggle);
+		Button btnReceiverToggle = (Button) findViewById(R.id.btnReceiverToggle);
+		Button btnForwarderToggle = (Button) findViewById(R.id.btnForwarderToggle);
 		Button btnPreferences = (Button) findViewById(R.id.btnPreferences);
-		TextView txtStatus = (TextView) findViewById(R.id.txtStatus);
+		TextView txtReceiving = (TextView) findViewById(R.id.txtReceiving);
+		TextView txtForwarding = (TextView) findViewById(R.id.txtForwarding);
 		TextView txtPort = (TextView) findViewById(R.id.txtPort);
 		TextView txtPage = (TextView) findViewById(R.id.txtPage);
 		
+		if (preferences.getBoolean("chkForwardSMS", false)) {
+			txtForwarding.setText("Forwarder On");
+			txtForwarding.setTextColor(0xFF00CC00);
+			btnForwarderToggle.setText("Stop Forwarder");
+		} else {
+			txtForwarding.setText("Forwarder Off");
+			txtForwarding.setTextColor(0xFFFF0000);
+			btnForwarderToggle.setText("Start Forwarder");
+		}
+		
 		if(serverService.isAlive()) {
-			txtStatus.setText("RUNNING");
-			btnServerToggle.setText("Stop");
+			txtReceiving.setText("Receiver On");
+			btnReceiverToggle.setText("Stop Receiver");
 			btnPreferences.setEnabled(false);
-			txtStatus.setTextColor(0xFF00CC00);
+			txtReceiving.setTextColor(0xFF00CC00);
 			int port = serverService.getPort();
 			txtPort.setText("Port: " + port);
 			txtPage.setText("Page: " + page);
 		} else {
-			txtStatus.setText("STOPPED");
-			btnServerToggle.setText("Start");
+			txtReceiving.setText("Receiver Off");
+			btnReceiverToggle.setText("Start Receiver");
 			btnPreferences.setEnabled(true);
-			txtStatus.setTextColor(0xFFFF0000);
+			txtReceiving.setTextColor(0xFFFF0000);
 			txtPort.setText("Port: None");
 			txtPage.setText("Page: " + page);
 		}
